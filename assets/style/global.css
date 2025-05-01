@@ -1,32 +1,98 @@
-.topnav{
-    background-color: #93b3f2;
-    position: fixed;
-    height: 100px;
-    top: 0;
-    width: 100%;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e1e0e0;
+    color: #333;
+    font-size: clamp(14px, 1.2vw, 24px);
+}
+
+header{
+  height: 100px;
+  background-color: #213448;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: clamp(14px, 1.2vw, 24px);
+}
+.topnav {
     display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 0 16px 0;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
     align-items: center;
-}
-
-.topnav #myLinks {
-    display: flex;
-    gap: 20px;
-}
-
-.topnav a{
-    color: white;
-    padding: 35px 16px;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .nav-links a {
+    color: #f2f2f2;
     text-decoration: none;
-}
+    padding: 14px 16px;
+  }
+  
+  .nav-links .active {
+    background-color: #547792;
+  }
+  
+  .icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
 
-.topnav a.icon {
-    display: flex;
-    background: #4c6faf;
+  @media screen and (max-width: 767px) {
+    .topnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+  
+    .icon {
+      display: flex;
+      align-self: center;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #213448;
+      position: absolute;
+      top: 100%;
+      width: fit-content;
+      border-radius: 8px;
+      z-index: 999;
+    }
+
+    .topnav.responsive .nav-links {
+      display: flex;
+    }
+  
+    .nav-links a {
+      display: flex;
+      text-align: center;
+    }
+  }
+
+  footer {
+    background-color: #213448;
+    color: white;
+    text-align: center;
+    height: 100px;
+    padding: 10px 0;
     position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.active {
-    background-color: #4c6faf;
-}
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(14px, 1.2vw, 24px);
+  }

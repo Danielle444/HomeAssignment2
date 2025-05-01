@@ -1,8 +1,11 @@
-function showHideNav(){
-var x = document.querySelector("#myLinks");
-if (x.style.display === "block") {
-    x.style.display = "none";
-    } else {
-    x.style.display = "block";
+function showHideNav() {
+    const nav = document.querySelector(".topnav");
+    nav.classList.toggle("responsive");
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    if (menuToggle) {
+      menuToggle.addEventListener("click", showHideNav);
     }
-}
+    });
