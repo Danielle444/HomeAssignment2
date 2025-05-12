@@ -10,6 +10,7 @@ main {
     flex-wrap: wrap;
     gap: 30px;
   }
+  
   .hero-text {
     max-width: 400px;
     text-align: center;
@@ -49,7 +50,7 @@ main {
   }
   .cta-contact, .cta-project {
     padding: 20px;
-    flex: 0 1 350px;
+    flex: 0 1 300px;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -123,6 +124,7 @@ main {
   .cta-contact, .cta-project {
     text-align: center;
     margin: 0 auto;
+    width: 100%;
   }
 
   .cta-project img {
