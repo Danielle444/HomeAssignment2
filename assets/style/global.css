@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 header{
   height: 100px;
   background-color: #213448;
@@ -29,37 +28,31 @@ header{
     justify-content: center;
     flex: 1;
   }
-  
   .nav-links a {
     color: #f2f2f2;
     text-decoration: none;
     padding: 14px 16px;
   }
-  
   .nav-links .active {
     background-color: #547792;
   }
-  
   .icon {
     display: none;
     font-size: 24px;
     cursor: pointer;
     color: white;
   }
-
   @media screen and (max-width: 767px) {
     .topnav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100px;
-    }
-  
+    } 
     .icon {
       display: flex;
       align-self: center;
-    }
-  
+    } 
     .nav-links {
       display: none;
       flex-direction: column;
@@ -70,11 +63,9 @@ header{
       border-radius: 8px;
       z-index: 999;
     }
-
     .topnav.responsive .nav-links {
       display: flex;
     }
-  
     .nav-links a {
       display: flex;
       text-align: center;
@@ -96,4 +87,5 @@ header{
     justify-content: center;
     align-items: center;
     font-size: clamp(14px, 1.2vw, 24px);
+    box-sizing: border-box;
   }
