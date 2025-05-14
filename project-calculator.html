@@ -25,36 +25,55 @@
   </header>
   <main>
     <section class="calculator-section">
-      <h2><i class="fa fa-calculator"></i> Project Price Calculator</h2>
+      <h2>Get a Quick Project Estimate <i class="fa fa-calculator"></i></h2>
 
       <form id="quoteForm">
-        <label for="siteType"><i class="fa fa-globe"></i> Type of Website:</label>
-        <select id="siteType" required>
-          <option value="">Select</option>
-          <option value="business">Business Site</option>
-          <option value="Online">Online Store</option>
-          <option value="blog">Blog</option>
-        </select>
-    
-        <label for="pageCount"><i class="fa fa-file-text-o"></i> Number of Pages (1–10):</label>
-        <input type="number" id="pageCount" min="1" max="10" required>
-    
-        <label><i class="fa fa-paint-brush"></i> Custom Design Needed?</label>
-        <div class="radio-group">
-          <input type="radio" id="designYes" name="customDesign" value="yes">
-          <label for="designYes">Yes</label>
-          
-          <input type="radio" id="designNo" name="customDesign" value="no">
-          <label for="designNo">No</label>
-        </div>
-    
+        <fieldset>
+          <legend><i class="fa fa-globe"></i> Type of Website</legend>
+          <select id="siteType" required>
+            <option value="">Select</option>
+            <option value="business">Business Site</option>
+            <option value="Online">Online Store</option>
+            <option value="blog">Blog</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend><i class="fa fa-file-text-o"></i> Number of Pages (1–10)</legend>
+          <div class="number-input">
+          <button type="button" class="decrement">–</button>
+          <input type="text" id="pageCount" value="1" readonly>
+          <button type="button" class="increment">+</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><i class="fa fa-paint-brush"></i> Custom Design Needed?</legend>
+          <div class="radio-group">
+            <input type="radio" id="designYes" name="customDesign" value="yes">
+            <label for="designYes">Yes</label>
+            <input type="radio" id="designNo" name="customDesign" value="no">
+            <label for="designNo">No</label>
+          </div>
+        </fieldset>
+
         <div class="button-group">
+          <button type="button" id="calculateBtn"><i class="fa">₪</i> Calculate</button>
           <button type="reset" class="reset-btn"><i class="fa fa-refresh"></i> Reset</button>
-          <button type="button" id="calculateBtn"><i class="fa fa-dollar"></i> Calculate</button>
         </div>
       </form>
-    
-      <div id="result" class="result-box">Estimated Price: </div>
+
+      <div id="result" class="result-box">
+        <strong id="resultTitle">Estimated Price-</strong>
+        <div class="breakdown hidden" id="breakdown">
+          <p><strong>Base Price:</strong> ₪<span id="basePriceValue"></span></p>
+          <p><strong>Pages:</strong> ₪<span id="pagePriceValue"></span></p>
+          <p><strong>Custom Design:</strong> ₪<span id="designPriceValue"></span></p>
+          <hr>
+          <p class="total"><strong>Total Estimate:</strong> ₪<span id="totalValue"></span></p>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
     <p>© 2025 Danielle kaneti. All rights reserved.</p> 
