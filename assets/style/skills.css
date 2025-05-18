@@ -18,7 +18,7 @@ main {
     position: relative;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55);
+    text-shadow: var(--shadow-very-heavy);
   }
   
   .skills-grid {
@@ -29,11 +29,11 @@ main {
   }
   
   .skill-card {
-    background-color: #fff;
+    background-color: var(--background-card-light);
     border-radius: 12px;
     padding: 25px 20px;
     text-align: center;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-light);
     transition: transform 0.2s ease;
   }
   
@@ -49,13 +49,13 @@ main {
     
   .skill-card i {
     font-size: 25px;
-    color: #1d69b9;
+    color: var(--icon-light);
     margin: 10px;
     gap: 10px;
   }
   .skill-card p {
     font-size: 16px;
-    color: #555;
+    color: var(--text-dark);
     line-height: 1.4;
   }
   .skill-card.ex p {

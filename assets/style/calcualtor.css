@@ -2,9 +2,9 @@
   max-width: 700px;
   margin: 140px auto 60px;
   padding: 40px;
-  background-color: #fff;
+  background-color: var(--background-card-light);
   border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-light);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -12,11 +12,11 @@
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
-  color: #0a3d62;
+  color: var(--text-med-dark);
 }
 
 fieldset {
-  border: 1px solid #d0dce5;
+  border: 1px solid var(--border-light);
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -24,14 +24,14 @@ fieldset {
 
 legend {
   font-weight: bold;
-  color: #0a3d62;
+  color: var(--text-med-dark);
 }
 
 label {
   display: block;
   margin: 10px 0 5px;
   font-weight: 600;
-  color: #333;
+  color: var(--background-dark);
 }
 
 select {
@@ -39,7 +39,7 @@ select {
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-light);
   box-sizing: border-box;
 }
 
@@ -65,6 +65,9 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
+#siteType{
+  background-color:var(--background-light);
+}
 
 .number-input {
   display: flex;
@@ -77,10 +80,10 @@ button {
   width: 50px;
   text-align: center;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-light);
   border-radius: 6px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--background-light);
 }
 
 .number-input button {
@@ -88,38 +91,29 @@ button {
   font-size: 18px;
   font-weight: bold;
   border: none;
-  background-color: #0a3d62;
-  color: white;
+  background-color: var(--background-med-light);
+  color: var(--text-light);
   border-radius: 6px;
   cursor: pointer;
 }
 
-.number-input button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 .reset-btn {
-  background-color: #8395a7;
-  color: #fff;
+  background-color: var(--text-med-dark);
+  color: var(--text-light);
 }
 
 #calculateBtn {
-  background-color: #0a3d62;
-  color: #fff;
-}
-
-#calculateBtn:hover {
-  background-color: #074b8a;
+  background-color: var(--text-med-dark);
+  color: var(--text-light);
 }
 
 .result-box {
   margin-top: 30px;
   padding: 20px;
-  background-color: #f2f6fb;
+  background-color: var(--background-light);
   border-radius: 8px;
   font-size: 16px;
-  color: #222;
+  color: var(--background-dark);
   line-height: 1.6;
 }
 
@@ -134,7 +128,7 @@ button {
 .total {
   font-size: 18px;
   font-weight: bold;
-  color: #0a3d62;
+  color: var(--text-med-dark);
 }
 
 @media (max-width: 768px) {
@@ -151,4 +145,3 @@ button {
     padding: 20px;
   }
 }
-

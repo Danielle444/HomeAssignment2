@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const calculateBtn = document.getElementById("calculateBtn");
   const quoteForm = document.getElementById("quoteForm");
   const resultBox = document.getElementById("result");
@@ -39,12 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   quoteForm.addEventListener("reset", function () {
-    resultBox.innerHTML = "<strong>Estimated Price:</strong>";
+    resultBox.innerHTML = `
+      <strong id="resultTitle">Estimated Price-</strong>
+      <div class="breakdown" id="breakdown">
+        <p><strong>Base Price:</strong> ₪<span id="basePriceValue"></span></p>
+        <p><strong>Pages:</strong> ₪<span id="pagePriceValue"></span></p>
+        <p><strong>Custom Design:</strong> ₪<span id="designPriceValue"></span></p>
+        <hr>
+        <p class="total"><strong>Total Estimate:</strong> ₪<span id="totalValue"></span></p>
+      </div>`;
     pageCountInput.value = "1";
     updateButtons();
   });
 
-  // כפתורי פלוס ומינוס לבחירת עמודים
   const decrementBtn = document.querySelector(".decrement");
   const incrementBtn = document.querySelector(".increment");
   const pageCountInput = document.getElementById("pageCount");
@@ -55,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     incrementBtn.disabled = currentValue >= 10;
   }
 
-  decrementBtn.addEventListener("click", () => {
+  decrementBtn.addEventListener("click", function() {
     let currentValue = parseInt(pageCountInput.value);
     if (currentValue > 1) {
       pageCountInput.value = currentValue - 1;
@@ -63,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  incrementBtn.addEventListener("click", () => {
+  incrementBtn.addEventListener("click", function() {
     let currentValue = parseInt(pageCountInput.value);
     if (currentValue < 10) {
       pageCountInput.value = currentValue + 1;
