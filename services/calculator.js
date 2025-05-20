@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+
   const calculateBtn = document.getElementById("calculateBtn");
   const quoteForm = document.getElementById("quoteForm");
   const resultBox = document.getElementById("result");
@@ -9,9 +9,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const designYes = document.getElementById("designYes");
     const designNo = document.getElementById("designNo");
 
-    if (!siteType || isNaN(pageCount) || (!designYes.checked && !designNo.checked)) {
-      resultBox.innerHTML = "<strong>Please fill out all fields.</strong>";
-      return;
+    let hasError = false;
+
+    if (!siteType) {
+    document.getElementById("basePriceValue").innerText = "ERROR – EMPTY";
+    hasError = true;
+    }
+
+    if (isNaN(pageCount)) {
+    document.getElementById("pagePriceValue").innerText = "ERROR – EMPTY";
+    hasError = true;
+    }
+
+    if (!designYes.checked && !designNo.checked) {
+    document.getElementById("designPriceValue").innerText = "ERROR – EMPTY";
+    hasError = true;
+    }
+
+    if (hasError) {
+    document.getElementById("totalValue").innerText = "ERROR";
+    return;
     }
 
     let basePrice = 0;
@@ -20,34 +37,27 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (siteType === "blog") basePrice = 1500;
 
     const pagePrice = pageCount * 200;
-    let designPrice = designYes.checked ? 1000 : 0;
-    const total = basePrice + pagePrice + designPrice;
+    let designPrice = 0;
 
-    resultBox.innerHTML = `
-      <div class="breakdown">
-        <p><strong>Base Price:</strong> ₪${basePrice}</p>
-        <p><strong>Pages (${pageCount} × ₪200):</strong> ₪${pagePrice}</p>
-        <p><strong>Custom Design:</strong> ₪${designPrice}</p>
-        <hr>
-        <p class="total"><strong>Total Estimate:</strong> ₪${total}</p>
-      </div>
-    `;
+    if (designYes.checked) {
+      designPrice = 1000;
+    } else {
+      designPrice = 0;
+    }
+        const total = basePrice + pagePrice + designPrice;
 
-    resultBox.classList.remove("animate");
-    void resultBox.offsetWidth;
-    resultBox.classList.add("animate");
+    document.getElementById("basePriceValue").innerText = " ₪" + basePrice;
+    document.getElementById("pagePriceValue").innerText = " ₪" + pagePrice;
+    document.getElementById("designPriceValue").innerText = " ₪" + designPrice;
+    document.getElementById("totalValue").innerText = " ₪" + total;
+
   });
 
   quoteForm.addEventListener("reset", function () {
-    resultBox.innerHTML = `
-      <strong id="resultTitle">Estimated Price-</strong>
-      <div class="breakdown" id="breakdown">
-        <p><strong>Base Price:</strong> ₪<span id="basePriceValue"></span></p>
-        <p><strong>Pages:</strong> ₪<span id="pagePriceValue"></span></p>
-        <p><strong>Custom Design:</strong> ₪<span id="designPriceValue"></span></p>
-        <hr>
-        <p class="total"><strong>Total Estimate:</strong> ₪<span id="totalValue"></span></p>
-      </div>`;
+    document.getElementById("basePriceValue").innerText = "";
+    document.getElementById("pagePriceValue").innerText = "";
+    document.getElementById("designPriceValue").innerText = "";
+    document.getElementById("totalValue").innerText = "";
     pageCountInput.value = "1";
     updateButtons();
   });
@@ -79,4 +89,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateButtons();
-});
+
