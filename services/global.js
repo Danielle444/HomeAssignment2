@@ -9,17 +9,25 @@ function showHideNav() {
     menuToggle.addEventListener("click", showHideNav);
   }
 
-const btnLightMode = document.getElementById("btnLightMode");
-const icon = btnLightMode.querySelector("i");
 
-btnLightMode.addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
+  const btnLightMode = document.getElementById("btnLightMode");
 
-  if (document.body.classList.contains("dark-mode")) {
-    icon.classList.remove("fa-sun-o");
-    icon.classList.add("fa-moon-o");
-  } else {
-    icon.classList.remove("fa-moon-o");
-    icon.classList.add("fa-sun-o");
+  if (btnLightMode) {
+    const icon = btnLightMode.querySelector("i");
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+        if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+      updateDarkModeIcon(true);
+    }
+        btnLightMode.addEventListener("click", function () {
+      const isDarkMode = document.body.classList.toggle("dark-mode");
+      updateDarkModeIcon(isDarkMode);
+      localStorage.setItem("darkMode", isDarkMode);
+    });
+        function updateDarkModeIcon(isDarkMode) {
+      if (!icon) return;
+      icon.classList.remove("fa-sun-o", "fa-moon-o");
+      icon.classList.add(isDarkMode ? "fa-moon-o" : "fa-sun-o");
+    }
   }
-});
