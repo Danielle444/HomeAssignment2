@@ -29,7 +29,7 @@ legend {
 
 label {
   display: block;
-  margin: 10px 0 5px;
+  margin: 5px;
   font-weight: 600;
   color: var(--text-med-dark);
 }
