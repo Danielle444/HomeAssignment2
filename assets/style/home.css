@@ -26,8 +26,8 @@
     margin: 30px;
   }
   #btn {
-    background-color: var(--background-dark);
-    color: var(--text-light);
+    background-color: var(--color-bg-btn);
+    color: var(--color-text-contrast);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 8px;
@@ -48,7 +48,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: var(--background-card-light);
+    background-color: var(--color-bg-surface);
     border-radius: 12px;
     box-shadow: var(--shadow-heavy);
     width: 100%;
@@ -57,13 +57,13 @@
   }
   .cta-contact h2 {
     font-size: 2.2rem;
-    color: var(--text-dark);
+    color: var(--color-text-primary);
     text-align: left;
     margin: 10px;
   }
   .cta-project h2 {
     font-size: 2.2rem;
-    color: var(--text-dark);
+    color: var(--color-text-primary);
     margin: 10px;
   }
   .cta-contact a{
@@ -71,7 +71,7 @@
     justify-content: left;
     gap: 10px;
     margin: 10px 0;
-    color: var(--text-dark);
+    color: var(--color-text-primary);
     text-decoration: none;
     font-size: 1.1rem;
   } 
@@ -81,13 +81,13 @@
     justify-content: center;
     gap: 10px;
     margin: 10px 0;
-    color: var(--text-dark);
+    color: var(--color-text-primary);
     text-decoration: none;
     font-size: 1.1rem;
   }
   .cta-contact i {
     font-size: 1.2rem;
-    color: var(--icon-light);
+    color: var(--color-accent);
   }
   .cta-project img {
     width: 100%;
@@ -95,7 +95,7 @@
     border-radius: 30px;
     box-shadow: var(--shadow-heavy);
     }
-    @media (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       main{
         padding-top: 100px;
       }

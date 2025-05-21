@@ -1,14 +1,14 @@
 body {
     font-family: 'secular one';
-    background-color: var(--main-babkground);
-    color: var(--text-dark);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     font-size: clamp(14px, 1.2vw, 24px);
     margin: 0;
     padding: 0;
 }
 header{
   height: 100px;
-  background-color: var(--background-med-dark);
+  background-color: var(--color-bg-banner);
   position: fixed;
   top: 0;
   width: 100%;
@@ -31,13 +31,13 @@ header{
     flex: 1;
   }
   .nav-links a {
-    color: var(--text-light);
+    color: var(--color-text-contrast);
     font-weight: 700;;
     text-decoration: none;
     padding: 14px 16px;
   }
   .nav-links .active {
-    background-color: var(--background-med-light);
+    background-color: var(--color-bg-banner-light);
     border-radius: 8px;
     padding: 11px 16px;
     display: inline-block;
@@ -46,23 +46,23 @@ header{
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: var(--text-light);
+    color: var(--color-text-contrast);
     padding: 10px 16px;
   }
   #btnLightMode{
     background: none;
     border: none;
-    color: var(--text-light);
+    color: var(--color-text-contrast);
     font-size: 25px;
     cursor: pointer;
     width: auto;
     padding: 10px 20px;
 }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: var(--background-med-dark);
+    background-color: var(--color-bg-banner);
     position: absolute;
     top: 100%;
     left: 0;
@@ -94,7 +94,7 @@ header{
   .icon {
     display: block;
     font-size: 28px;
-    color: var(--text-light);
+    color: var(--color-text-contrast);
     cursor: pointer;
   }
 }
@@ -104,8 +104,8 @@ header{
     line-height: 1.75;
   }
   footer {
-    background-color: var(--background-med-dark);
-    color: var(--text-light);
+    background-color: var(--color-bg-banner);
+    color: var(--color-text-contrast);
     text-align: center;
     height: 100px;
     padding: 20px;
